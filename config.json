@@ -1,0 +1,361 @@
+{
+  "assemblies": [
+    {
+      "name": "vaccinia",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "vaccinia-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "uri": "vaccinia.fa",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "vaccinia.fa.fai",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    },
+    {
+      "name": "monkeypox",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "monkeypox-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "uri": "monkeypox.fa",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "monkeypox.fa.fai",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    },
+    {
+      "name": "cowpox",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "cowpox-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "uri": "cowpox.fa",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "cowpox.fa.fai",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    },
+    {
+      "name": "fowlpox",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "fowlpox-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "uri": "fowlpox.fa",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "fowlpox.fa.fai",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    },
+    {
+      "name": "smallpox",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "smallpox-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "uri": "smallpox.fa",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "smallpox.fa.fai",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    }
+  ],
+  "configuration": {},
+  "connections": [],
+  "defaultSession": {
+    "name": "New Session"
+  },
+  "tracks": [
+    {
+      "type": "SyntenyTrack",
+      "trackId": "monkeypox_vs_cowpox",
+      "name": "monkeypox_vs_cowpox",
+      "adapter": {
+        "type": "PAFAdapter",
+        "pafLocation": {
+          "uri": "monkeypox_vs_cowpox.paf",
+          "locationType": "UriLocation"
+        },
+        "assemblyNames": [
+          "cowpox",
+          "monkeypox"
+        ]
+      },
+      "assemblyNames": [
+        "cowpox",
+        "monkeypox"
+      ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "genes.gff",
+      "name": "genes.gff",
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "uri": "genes.gff.gz",
+          "locationType": "UriLocation"
+        },
+        "index": {
+          "location": {
+            "uri": "genes.gff.gz.tbi",
+            "locationType": "UriLocation"
+          },
+          "indexType": "TBI"
+        }
+      },
+      "assemblyNames": [
+        "monkeypox"
+      ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "cowpox_ann.gff",
+      "name": "cowpox_ann.gff",
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "uri": "cowpox_ann.gff.gz",
+          "locationType": "UriLocation"
+        },
+        "index": {
+          "location": {
+            "uri": "cowpox_ann.gff.gz.tbi",
+            "locationType": "UriLocation"
+          },
+          "indexType": "TBI"
+        }
+      },
+      "assemblyNames": [
+        "cowpox"
+      ]
+    },
+    {
+      "type": "SyntenyTrack",
+      "trackId": "monkeypox_vs_cowpox_vs_smallpox_vs_fowlpox_vs_vaccinia",
+      "name": "monkeypox_vs_cowpox_vs_smallpox_vs_fowlpox_vs_vaccinia",
+      "adapter": {
+        "type": "PAFAdapter",
+        "pafLocation": {
+          "uri": "monkeypox_vs_cowpox_vs_smallpox_vs_fowlpox_vs_vaccinia.paf",
+          "locationType": "UriLocation"
+        },
+        "assemblyNames": [
+          "cowpox",
+          "smallpox",
+          "fowlpox",
+          "vaccinia",
+          "monkeypox"
+        ]
+      },
+      "assemblyNames": [
+        "cowpox",
+        "smallpox",
+        "fowlpox",
+        "vaccinia",
+        "monkeypox"
+      ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "vaccinia_ann.gff",
+      "name": "vaccinia_ann.gff",
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "uri": "vaccinia_ann.gff.gz",
+          "locationType": "UriLocation"
+        },
+        "index": {
+          "location": {
+            "uri": "vaccinia_ann.gff.gz.tbi",
+            "locationType": "UriLocation"
+          },
+          "indexType": "TBI"
+        }
+      },
+      "assemblyNames": [
+        "vaccinia"
+      ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "smallpox_ann.gff",
+      "name": "smallpox_ann.gff",
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "uri": "smallpox_ann.gff.gz",
+          "locationType": "UriLocation"
+        },
+        "index": {
+          "location": {
+            "uri": "smallpox_ann.gff.gz.tbi",
+            "locationType": "UriLocation"
+          },
+          "indexType": "TBI"
+        }
+      },
+      "assemblyNames": [
+        "smallpox"
+      ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "fowlpox_ann.gff",
+      "name": "fowlpox_ann.gff",
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "uri": "fowlpox_ann.gff.gz",
+          "locationType": "UriLocation"
+        },
+        "index": {
+          "location": {
+            "uri": "fowlpox_ann.gff.gz.tbi",
+            "locationType": "UriLocation"
+          },
+          "indexType": "TBI"
+        }
+      },
+      "assemblyNames": [
+        "fowlpox"
+      ]
+    },
+    {
+      "type": "SyntenyTrack",
+      "trackId": "all_vs_vaccinia",
+      "name": "all_vs_vaccinia",
+      "adapter": {
+        "type": "PAFAdapter",
+        "pafLocation": {
+          "uri": "all_vs_vaccinia.paf",
+          "locationType": "UriLocation"
+        },
+        "assemblyNames": [
+          "monkeypox",
+          "cowpox",
+          "smallpox",
+          "fowlpox",
+          "vaccinia"
+        ]
+      },
+      "assemblyNames": [
+        "monkeypox",
+        "cowpox",
+        "smallpox",
+        "fowlpox",
+        "vaccinia"
+      ]
+    },
+    {
+      "type": "SyntenyTrack",
+      "trackId": "all_vs_cowpox",
+      "name": "all_vs_cowpox",
+      "adapter": {
+        "type": "PAFAdapter",
+        "pafLocation": {
+          "uri": "all_vs_cowpox.paf",
+          "locationType": "UriLocation"
+        },
+        "assemblyNames": [
+          "monkeypox",
+          "smallpox",
+          "fowlpox",
+          "vaccinia",
+          "cowpox"
+        ]
+      },
+      "assemblyNames": [
+        "monkeypox",
+        "smallpox",
+        "fowlpox",
+        "vaccinia",
+        "cowpox"
+      ]
+    },
+    {
+      "type": "SyntenyTrack",
+      "trackId": "all_vs_smallpox",
+      "name": "all_vs_smallpox",
+      "adapter": {
+        "type": "PAFAdapter",
+        "pafLocation": {
+          "uri": "all_vs_smallpox.paf",
+          "locationType": "UriLocation"
+        },
+        "assemblyNames": [
+          "monkeypox",
+          "cowpox",
+          "fowlpox",
+          "vaccinia",
+          "smallpox"
+        ]
+      },
+      "assemblyNames": [
+        "monkeypox",
+        "cowpox",
+        "fowlpox",
+        "vaccinia",
+        "smallpox"
+      ]
+    },
+    {
+      "type": "SyntenyTrack",
+      "trackId": "all_vs_fowlpox",
+      "name": "all_vs_fowlpox",
+      "adapter": {
+        "type": "PAFAdapter",
+        "pafLocation": {
+          "uri": "all_vs_fowlpox.paf",
+          "locationType": "UriLocation"
+        },
+        "assemblyNames": [
+          "monkeypox",
+          "cowpox",
+          "smallpox",
+          "vaccinia",
+          "fowlpox"
+        ]
+      },
+      "assemblyNames": [
+        "monkeypox",
+        "cowpox",
+        "smallpox",
+        "vaccinia",
+        "fowlpox"
+      ]
+    }
+  ]
+}
