@@ -114,6 +114,7 @@ Since we already have the viral FASTA files in our tmp directory, use the comman
 minimap2 monkeypox.fna cowpox.fna variola.fna fowlpox.fna vaccinia.fna > other_vs_monkeypox.paf
 ```
 After the .paf file is created, it needs to be added as a track to JBrowse. 
+
 **Important** The order of the assembly names really matters! With the command above, a .paf file is created that maps the commonalities between cowpox and monkeypox, variola and monkeypox etc. So when adding the track, the monkeypox assembly name is last and the order for the other assemblies should follow the order used when creating the .paf file.
 
 ```
@@ -143,3 +144,5 @@ Upload the alignment.fa file and the poxvirusTree.nwk file onto JBrowse by going
 
 ## 7.0 Interact with jbrowse
 Now, you can use JBrowse to see explore the linear synteny, genome sequence, genome annotation, 3D protein visualization, and pylogenetic trees of the five poxviruses.
+
+### 7.1 linear synteny view
