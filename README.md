@@ -2,7 +2,7 @@
 The documentation will walk you through setting up the JBrowse2 Genome Browser and uploading the genome data for five specific virus in the poxvirus family (variola, vaccinia, cowpox, Mpox, and fowlpox). After following the instructions, you will be able to interact with the linear synteny view, 3D protein visualization, multiple sequence alignment view, and the pylogenetic tree features.
 
 ## 1. Pre-setting for the Jbrowse
-Please follow the link to setup the jbrowse with the preferred platform. ![alt text](https://github.com/bioe131/lab-8-KarinaJin) or the documentation from jbrowse website.![alt text](https://jbrowse.org/jb2/docs/quickstart_web/)
+Please follow the link to setup the jbrowse with the preferred platform. [alt text](https://github.com/bioe131/lab-8-KarinaJin) or the documentation from jbrowse website.[alt text](https://jbrowse.org/jb2/docs/quickstart_web/)
 
 Before the next step, make sure that you can see the following:
 
