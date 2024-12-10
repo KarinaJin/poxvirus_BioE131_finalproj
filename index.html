@@ -1,1 +1,145 @@
-<html><body><h1>say hello</h1></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Explore genomic data with JBrowse: Linear synteny, phylogenetic trees, and 3D protein structures" />
+  <title>JBrowse Home</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer="defer" src="static/js/main.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to JBrowse</h1>
+    <nav>
+      <ul>
+        <li><a href="#linear-synteny">Linear Synteny</a></li>
+        <li><a href="#phylogenetic-tree">Phylogenetic Tree</a></li>
+        <li><a href="#protein-structure">3D Protein Structure</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Buttons Section -->
+    <section id="feature-navigation">
+      <h2>Explore Features</h2>
+      <div class="feature-buttons">
+        <button onclick="navigateToFeature('synteny.html')">Linear Synteny View</button>
+        <button onclick="navigateToFeature('phylogenetic-tree.html')">Phylogenetic Tree View</button>
+        <button onclick="navigateToFeature('protein-structure.html')">3D Protein Structure View</button>
+      </div>
+    </section>
+
+    <!-- Linear Synteny Section -->
+    <section id="linear-synteny">
+      <h2>Linear Synteny View</h2>
+      <p>Compare genomic regions across multiple species.</p>
+      <a href="synteny.html" class="link-button">Go to Linear Synteny View</a>
+    </section>
+
+    <!-- Phylogenetic Tree Section -->
+    <section id="phylogenetic-tree">
+      <h2>Phylogenetic Tree View</h2>
+      <p>Visualize evolutionary relationships between organisms.</p>
+      <a href="phylogenetic-tree.html" class="link-button">Go to Phylogenetic Tree View</a>
+    </section>
+
+    <!-- 3D Protein Structure Section -->
+    <section id="protein-structure">
+      <h2>3D Protein Structure View</h2>
+      <p>Explore the 3D structure of proteins associated with genomic regions.</p>
+      <a href="protein-structure.html" class="link-button">Go to 3D Protein Structure View</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 JBrowse Genome Browser</p>
+  </footer>
+
+  <script>
+    function navigateToFeature(url) {
+      window.location.href = url;
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .feature-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    button {
+      padding: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .link-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .link-button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #f1f1f1;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+  </style>
+</body>
+</html>
