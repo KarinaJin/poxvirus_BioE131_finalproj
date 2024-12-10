@@ -142,7 +142,19 @@ Use the following command to generate the tree.
 
 Upload the alignment.fa file and the poxvirusTree.nwk file onto JBrowse by going to 'Add' in the top left corner and selecting 'Multiple sequence alignment view' nad uploading the files in their respective areas.
 
-## 7.0 Interact with jbrowse
+## 7.0 Interact with JBrowse
 Now, you can use JBrowse to see explore the linear synteny, genome sequence, genome annotation, 3D protein visualization, and pylogenetic trees of the five poxviruses.
 
-### 7.1 linear synteny view
+### 7.1 Linear Synteny View
+In order to explore linear synteny between two genomes, click on the 'Add' button on the top left corner. A drop-down menu should appear. Click on the "Linear synteny view" option. A block should appear that allows you to select the assemblies to compare. Select the two assemblies that are to be compared and select "Existing track". The name of the track selected should include the name of the assembly selected in Row 1.
+
+For example, if the assemblies for monkeypox and vaccinia are to be compared, select monkeypox for Row 1 and vaccinia for Row 2. For the existing track, select all_vs_monkeypox.
+
+### 7.2 3D Protein Visualization
+In order to explore 3D protein visualization, click on the 'Add' button on the top left corner. A drop-down menu should appear. Click on the "Linear genome view" option. Click on "Open Track Selector" and click on the gene annotation track corresponding with the genome you want to explore. Then right-click on a gene you want to see and select "Launch protein view". A window will appear showing the launcher for protein view. Click on the blue link "here" that will redirect you to AlphaFold with a search of the protein sequence automatically running. When the search is done, a UniProt ID will be returned. Copy that Uniprot ID into the "Manual UniProt Entry" option and click "Launch 3-D Protein Structure View". A 3D visualization of your protein should appear.
+
+For example, if you want to explore the vaccinia genome, click on the vaccinia_ann.gff in order to get the correct gene annotation track.
+
+### 7.3 Phylogenetic Trees and Multiple Sequence Alignment View
+In order to explore phylogenetic tree of the five viral genomes, click on the 'Add' button on the top left corner. A drop-down menu should appear. Click on the "Multiple sequence alignment view" option. A block should appear that allows you to upload an MSA file and a tree file. Upload the two files generated in Step 6, with the alignment.fa for the MSA file and poxvirusTree.nwk for the tree file. Click "Open" to show the phylogenetic tree and multiple sequence alignment view.
+In order to explore phylogenetic trees for a specifc gene, click on the 'Add' button on the top left corner. A drop-down menu should appear. Click on the "Linear genome view" option. Click on "Open Track Selector" and click on the gene annotation track corresponding with the genome you want to explore. Then right-click on a gene you want to see and select "Launch MSA view". Click "Submit" to run NCBI BLAST on the gene sequence. Once done running, a phylogenetic tree of the selected gene with the other genes found in the search will appear, along with the multiple sequence alignment view.
