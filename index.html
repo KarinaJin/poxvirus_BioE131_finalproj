@@ -12,10 +12,10 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to Pox Patrol</h1>
+    <h1 style="font-size: 2.5rem; margin: 0;">Welcome to Pox Patrol</span></h1>
     <nav>
-      <ul>
-          <li></a>This browser will allow you to explore the genome sequences, genome annotations for main gene structures, lineary synteny, phylogenetic trees, and 3D protein visualizations for five viruses in the Poxviridae family: variola virus, vaccinia virus, cowpox virus, Mpox virus, and fowlpox virus.</a></li>
+      <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 1rem; margin: 1rem 0;">
+        <li style="font-size: 1.2rem; color: white;">Explore genomic sequences, annotations, synteny, and protein structures of five viruses in the Poxviridae family: variola, vaccinia, cowpox, Mpox, and fowlpox.</li>
       </ul>
     </nav>
   </header>
@@ -23,7 +23,7 @@
   <main>
     <!-- Buttons Section -->
     <section id="feature-navigation">
-      <h2>Explore Features</h2>
+      <h2 style="text-align: center; color: #2C3E50; margin-bottom: 1rem;">Explore Features</h2>
       <div class="feature-buttons">
         <button onclick="window.location.href='https://karinajin.github.io/poxvirus_BioE131_finalproj.github.io/jbrowse2/?session=share-bgXvH8Irkw&password=DLwAx'">Reference Sequence</button>
         <button onclick="window.location.href='https://karinajin.github.io/poxvirus_BioE131_finalproj.github.io/jbrowse2/?session=share-GarN-CQosw&password=uT4KR'">Genome Annotations</button>
@@ -32,14 +32,20 @@
         <button onclick="window.location.href='https://karinajin.github.io/poxvirus_BioE131_finalproj.github.io/jbrowse2/?session=share-z13FgS9dnG&password=Haqyd'">Phylogenetic Tree View</button>
       </div>
 
-         
-      <div style="text-align: center; margin-top: 2rem;">
-         <button onclick="window.location.href='https://karinajin.github.io/poxvirus_BioE131_finalproj.github.io/jbrowse2/'">Go to Jbrowse2</button>
-       </div>
-    </section>
+      <!-- New Decorative Image -->
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="https://via.placeholder.com/800x400" alt="Genomic Data Visualization" style="max-width: 90%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+      </div>
 
-  <footer>
-    <p>© 2024 JBrowse Genome Browser</p>
+      <!-- New Button -->
+      <div style="text-align: center; margin-top: 2rem;">
+        <button onclick="window.location.href='https://karinajin.github.io/poxvirus_BioE131_finalproj.github.io/jbrowse2/'">Go to JBrowse2</button>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: #2C3E50; color: white; text-align: center; padding: 1rem;">
+    <p style="margin: 0;">Karina Jin & Chelsie Wang's Final Project</p>
   </footer>
 
   <script>
@@ -50,32 +56,18 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #EAECEE;
+      color: #2C3E50;
     }
 
     header {
-      background-color: #333;
+      background-color: #34495E;
       color: white;
-      padding: 1rem;
+      padding: 1.5rem;
       text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav ul li {
-      margin: 0 1rem;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
     }
 
     main {
@@ -84,44 +76,30 @@
 
     .feature-buttons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin: 1rem 0;
     }
 
     button {
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       font-size: 1rem;
       cursor: pointer;
       border: none;
-      background-color: #007BFF;
+      background-color: #00509E;
       color: white;
       border-radius: 5px;
+      transition: transform 0.2s, background-color 0.2s;
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: #003F7D;
+      transform: scale(1.05);
     }
 
-    .link-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .link-button:hover {
-      background-color: #218838;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #f1f1f1;
-      padding: 1rem 0;
-      margin-top: 2rem;
+    img {
+      display: block;
+      margin: auto;
     }
   </style>
 </body>
