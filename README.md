@@ -48,39 +48,86 @@ Please do the same command with different links of virus and different names to 
 
 ### 2.2. Download and process genome annotations
 
-Still in the temporary folder, download ENSEMBLE genome annotations in the GFF3 format. 
+Still in the temporary folder, download genome annotations in the GFF format. 
+
+Here is the genome annotations files' link that we will be download from NCBI:
+1. Vaccinia:  https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/860/085/GCF_000860085.1_ViralProj15241/GCF_000860085.1_ViralProj15241_genomic.gff.gz
+2. Monkeypox: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/006/465/845/GCA_006465845.1_ASM646584v1/GCA_006465845.1_ASM646584v1_genomic.gff.gz
+3. Cowpox:    https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/839/185/GCF_000839185.1_ViralProj14174/GCF_000839185.1_ViralProj14174_genomic.gff.gz
+4. Smallpox:  https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/859/885/GCF_000859885.1_ViralProj15197/GCF_000859885.1_ViralProj15197_genomic.gff.gz
+5. Fowlpox:   https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/838/605/GCF_000838605.1_ViralProj14052/GCF_000838605.1_ViralProj14052_genomic.gff.gz
+
+Please use the following command line to get the data into your tmp folder, and do 1 virus per time (Do the second virus after you add track to the jbrowse).
+Let use vaccinia as the example:
 
 ```
-export GFF_ROOT=https://ftp.ensembl.org/pub/release-110/gff3/homo_sapiens
-wget $GFF_ROOT/Homo_sapiens.GRCh38.110.chr.gff3.gz
-gunzip Homo_sapiens.GRCh38.110.chr.gff3.gz
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/860/085/GCF_000860085.1_ViralProj15241/GCF_000860085.1_ViralProj15241_genomic.gff.gz
+gunzip GCF_000860085.1_ViralProj15241_genomic.gff.gz
 ```
 
-Use jbrowse to sort the annotations. jbrowse sort-gff sorts the GFF3 by refName (first column) and start position (fourth column), while making sure to preserve the header lines at the top of the file (which start with “#”). We then compress the GFF with bgzip (block gzip, which zips files into little blocks for rapid access), and index with tabix. The tabix command outputs a file named genes.gff.gz.tbi in the same directory, and we then refer to “genes.gff.gz” as a “tabix indexed GFF3 file”.
-
 ```
-jbrowse sort-gff Homo_sapiens.GRCh38.110.chr.gff3 > genes.gff
-bgzip genes.gff
-tabix genes.gff.gz
+jbrowse sort-gff GCF_000860085.1_ViralProj15241_genomic.gff.gz > vaccinia_ann.gff
+bgzip vaccinia_ann.gff
+tabix vaccinia_ann.gff.gz
 ```
 
-### 4.5. Load annotation track into jbrowse
-
+Then we would like to load the annotation track into jbrowse by the following command line:
 ```
 jbrowse add-track genes.gff.gz --out $APACHE_ROOT/jbrowse2 --load copy
 ```
+Please do the same command with different links of virus and different names to upload the virus.
 
-### 4.6. Index for search-by-gene
 
-Run the “jbrowse text-index” command to allow users to search by gene name within JBrowse 2.
-
-In the temporary work directory, run the following command.
+## 3.0 Embedded the Plugin for the feature
+Now on your terminal, go to the jbrowse2 folder with this kind of path: /var/www/html/jbrowse2
+Open the file called "config.json" by using the text editor. In this documentation, it will be perform by nano.
+On the path: /var/www/html/jbrowse2
+```
+nano config.json
+```
+After this command line, it will open a text editor, please add the following to the file:
+Copy paste the following after the default session json object.
 
 ```
-jbrowse text-index --out $APACHE_ROOT/jbrowse2
+"plugins": [
+    {
+      "name": "Protein3d",
+      "url": "https://unpkg.com/jbrowse-plugin-protein3d/dist/jbrowse-plugin-protein3d.umd.production.min.js"
+    },
+{
+      "name": "MsaView",
+      "url": "https://unpkg.com/jbrowse-plugin-msaview/dist/jbrowse-plugin-msaview.umd.production.min.js"
+    }
+  ]
+```
+shows like the following: {picture link}
+
+This will make the plugin embedded into the jbrowse all the time. Don't need to installed it everytime when open a new session.
+
+## 4.0 Download minimap2 to generate the paf file for linear synteny view feature
+First make sure that you have the minimap2, please use the link to install the minimap. (https://github.com/lh3/minimap2?tab=readme-ov-file#install)
+After you install the minimap2,
+we will using the minimap2 to generate the paf file for the track.
+
+Example: I want to create a paf file to see the common between monkeypox and other viruses.
+From the previous step we already have the viruses FASTA file in our tmp directory.
+Use the below command:
+
+```
+minimap2 monkeypox.fna cowpox.fna smallpox.fna fowlpox.fna vaccinia.fna > other_vs_monkeypox.paf
+```
+after you create the paf file
+we need to add track to our jbrowse
+**Important** The order is really matters! from the above command, it will creating the paf file that the common between cowpox and monkeypox, smallpox and monkeypox etc. So when adding the track, we should let the monkeypox assembly name at the last, and follow the order when we create in the for pad file.
+
+```
+jbrowse add-track other_vs_monkeypox.paf --assemblyNames cowpox,smallpox,fowlpox,vaccinia,monkeypox --load copy --out /var/www/html/jbrowse2
 ```
 
-## 5.0 Use your genome browser to explore a gene of interest
+
+## 5.0 Use MAFFT to create multiple sequence aligment
+Installing the MAFFT by using the following linke: https://mafft.cbrc.jp/alignment/software/
+
 
 ## 2. Upload data from the NCBI to the Jbrowse by using the command line tool.
 ### 2.1 
