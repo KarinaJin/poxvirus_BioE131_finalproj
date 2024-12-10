@@ -126,11 +126,24 @@ jbrowse add-track other_vs_monkeypox.paf --assemblyNames cowpox,smallpox,fowlpox
 
 
 ## 5.0 Use MAFFT to create multiple sequence aligment
-Installing the MAFFT by using the following linke: https://mafft.cbrc.jp/alignment/software/
+Installing the MAFFT by using the following link: https://mafft.cbrc.jp/alignment/software/
+before that, creating a file that contains all the sequences of the viruses
 
+On the Command Line:
+```
+mafft
+```
+and then follow the instruction from that.
+Let output be named as alignment.fa and be the FASTA format and with input order
+Using  FFT-NS-1 (fast) strategy and then wait about 30-1hr to let the file create completely
 
-## 2. Upload data from the NCBI to the Jbrowse by using the command line tool.
-### 2.1 
+## 6.0 Use biopython muscle fasttree to generate the tree file
+Installing the fasttree by using the following link: http://www.microbesonline.org/fasttree/#Install
+Use the command line to generate the tree.
+```
+!fasttree -nt < alignment.fa > poxyvirusTree.nwk
 ```
 
-```
+
+## 7.0 Interact with jbrowse
+Now, you can use the jbrowse to see the linear synteny view, sequence, 3d protein visualization, and pylogenetic tree.
