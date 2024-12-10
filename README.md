@@ -2,7 +2,7 @@
 The documentation will walk you through setting up the JBrowse2 Genome Browser and uploading the genome data for five specific virus in the poxvirus family (variola, vaccinia, cowpox, Mpox, and fowlpox). After following the instructions, you will be able to interact with the linear synteny view, 3D protein visualization, multiple sequence alignment view, and the pylogenetic tree features.
 
 ## 1. Pre-setting for the Jbrowse
-Please follow the link to setup the jbrowse with the preferred platform. [alt text](https://github.com/bioe131/lab-8-KarinaJin) or the documentation from jbrowse website.[alt text](https://jbrowse.org/jb2/docs/quickstart_web/)
+Please follow the link to setup the jbrowse with the preferred platform. (https://github.com/bioe131/lab-8-KarinaJin) or the documentation from jbrowse website.(https://jbrowse.org/jb2/docs/quickstart_web/)
 
 Before the next step, make sure that you can see the following:
 
@@ -15,7 +15,8 @@ Now you should see the words "It worked!" with a green box underneath saying "JB
 Make sure you are in the temporary folder you created from the above instruction, then download the viral genomes in fasta format using wget.
 
 Here is the genome sequence link used to download from NCBI:
-1. Vaccinia:  ![alt text](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/860/085/GCF_000860085.1_ViralProj15241/GCF_000860085.1_ViralProj15241_genomic.fna.gz)
+1. Vaccinia:
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/860/085/GCF_000860085.1_ViralProj15241/GCF_000860085.1_ViralProj15241_genomic.fna.gz
 2. Monkeypox: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/006/465/845/GCA_006465845.1_ASM646584v1/GCA_006465845.1_ASM646584v1_genomic.fna.gz
 3. Cowpox:    https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/839/185/GCF_000839185.1_ViralProj14174/GCF_000839185.1_ViralProj14174_genomic.fna.gz
 4. Variola:   https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/859/885/GCF_000859885.1_ViralProj15197/GCF_000859885.1_ViralProj15197_genomic.fna.gz
